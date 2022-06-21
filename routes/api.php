@@ -21,3 +21,6 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::get('/getData', [RestController::class, 'getData']);
 
+Route::get('/getSecretData', [RestController::class, 'getSecretData'])->middleware('hawkingSecret');
+
+Route::get('/accessDenied', [RestController::class, 'accessDenied']);

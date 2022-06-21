@@ -64,5 +64,6 @@ class Kernel extends HttpKernel
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
         'hawking' => \App\Http\Middleware\HawkingRoute::class,
+        'hawkingSecret' => \App\Http\Middleware\HawkingSecret::class,
     ];
 }

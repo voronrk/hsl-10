@@ -10,4 +10,14 @@ class RestController extends Controller
     {
         return json_encode('This is data from Rest API controller');
     }
+
+    function getSecretData() 
+    {
+        return json_encode('This is VERY SECRET data from Rest API controller');
+    }
+
+    function accessDenied() 
+    {
+        return json_encode('Access denied!');
+    }
 }
