@@ -15,16 +15,24 @@ use Illuminate\Http\Request;
 |
 */
 
+//Default route. Show page without data
 Route::get('/', function () {
     return view('index', ['data' => []]);
 });
 
+//Route-1. Show page with some information.
 Route::get('/1', function () {
     return view('index', ['data' => ['This is first route.']]);
-});
+})->middleware('hawking');
 
-Route::get('/11', [ControllerForRedirect::class, 'show']);
+//Route-1.1. Working like route-1 but make by controller.
+Route::get('/11', [ControllerForRedirect::class, 'show'])->middleware('hawking');
 
-Route::permanentRedirect('/2', '/1');
+//Route-2. Redirect to route-1.
+Route::permanentRedirect('/2', '/1')->middleware('hawking');
 
+//Route-3. With required parameter
+Route::get('/3/{param}', [ControllerForRedirect::class, 'show'])->middleware('hawking');
 
+//Route-4.
+Route::get('/4')->middleware('hawking');
