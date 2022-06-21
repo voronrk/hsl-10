@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ControllerForRedirect;
+use Illuminate\Http\Request;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +18,15 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('index', ['view' => view('pages.main', [])]);
 });
+
+Route::get('/1', function () {
+    return view('index', ['view' => view('pages.main', ['data' => ['This is first route.']])]);
+});
+
+Route::get('/11', function (Request $request) {
+    return view('index', ['view' => ControllerForRedirect::show($request)]);
+});
+
+Route::permanentRedirect('/2', '/1');
+
+
