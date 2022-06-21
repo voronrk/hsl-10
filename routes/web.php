@@ -16,16 +16,14 @@ use Illuminate\Http\Request;
 */
 
 Route::get('/', function () {
-    return view('index', ['view' => view('pages.main', [])]);
+    return view('index', ['data' => []]);
 });
 
 Route::get('/1', function () {
-    return view('index', ['view' => view('pages.main', ['data' => ['This is first route.']])]);
+    return view('index', ['data' => ['This is first route.']]);
 });
 
-Route::get('/11', function (Request $request) {
-    return view('index', ['view' => ControllerForRedirect::show($request)]);
-});
+Route::get('/11', [ControllerForRedirect::class, 'show']);
 
 Route::permanentRedirect('/2', '/1');
 

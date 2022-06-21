@@ -7,11 +7,8 @@ use Illuminate\Http\Request;
 
 class ControllerForRedirect extends Controller
 {
-    public static function show(Request $request)
+    public static function show()
     {
-        return view('pages.main', ['data' => [
-            'This is first route from controller.',
-            print_r($request,true)
-            ]]);
+        return view('index', ['data' => ['This is first route by controller.']]);
     }
 }

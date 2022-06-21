@@ -1,5 +1,7 @@
 @extends('templates.layout')
 
 @section('page')
-{!! $view !!}
+    @foreach($data as $item)
+        {{ $item}}<br>
+    @endforeach
 @endsection
