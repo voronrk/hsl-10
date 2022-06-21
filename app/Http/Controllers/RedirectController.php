@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Controllers;
 use Illuminate\Http\Request;
 
-class ControllerForRedirect extends Controller
+class RedirectController extends Controller
 {
     public static function show(Request $request, string $param = '')
     {

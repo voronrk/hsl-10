@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\ControllerForRedirect;
+use App\Http\Controllers\RedirectController;
 use Illuminate\Http\Request;
 
 /*
@@ -26,13 +26,13 @@ Route::get('/1', function () {
 })->middleware('hawking');
 
 //Route-1.1. Working like route-1 but make by controller.
-Route::get('/11', [ControllerForRedirect::class, 'show'])->middleware('hawking');
+Route::get('/11', [RedirectController::class, 'show'])->middleware('hawking');
 
 //Route-2. Redirect to route-1.
 Route::permanentRedirect('/2', '/1')->middleware('hawking');
 
 //Route-3. With required parameter
-Route::get('/3/{param}', [ControllerForRedirect::class, 'show'])->middleware('hawking');
+Route::get('/3/{param}', [RedirectController::class, 'show'])->middleware('hawking');
 
 //Route-4.
 Route::get('/4')->middleware('hawking');
