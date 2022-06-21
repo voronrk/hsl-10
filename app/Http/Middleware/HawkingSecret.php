@@ -16,7 +16,7 @@ class HawkingSecret
      */
     public function handle(Request $request, Closure $next)
     {
-        if($request->header()['token'][0] == 'abcdef5') {
+        if((isset($request->header()['token'][0])) && ($request->header()['token'][0] == 'abcdef5')) {
             return $next($request);    
         } else {
             return redirect('/api/accessDenied');
