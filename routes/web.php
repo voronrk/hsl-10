@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RedirectController;
+use App\Http\Controllers\FormController;
+use App\Http\Controllers\ProfileController;
 use Illuminate\Http\Request;
 
 /*
@@ -36,3 +38,9 @@ Route::get('/3/{param}', [RedirectController::class, 'show'])->middleware('hawki
 
 //Route-4.
 Route::get('/4')->middleware('hawking');
+
+//Form route.
+Route::get('/form/{param?}', [FormController::class, 'show']);
+
+//Profile route.
+Route::post('/profile', [ProfileController::class, 'show'])->middleware('hawkingForm');

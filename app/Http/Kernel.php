@@ -65,5 +65,6 @@ class Kernel extends HttpKernel
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
         'hawking' => \App\Http\Middleware\HawkingRoute::class,
         'hawkingSecret' => \App\Http\Middleware\HawkingSecret::class,
+        'hawkingForm' => \App\Http\Middleware\HawkingForm::class,
     ];
 }
