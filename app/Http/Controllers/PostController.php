@@ -14,7 +14,10 @@ class PostController extends Controller
 
     function store(Request $request)
     {
-        $post = Post::saveData(['title' => $request->all()['title'], 'text' => $request->all()['text']]);
+        $post = new Post;
+        $post->title = $request->all()['title'];
+        $post->text = $request->all()['text'];
+        $post->save();
         return view('index', ['data' => $post]);
     }
 }
