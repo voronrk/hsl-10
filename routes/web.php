@@ -21,4 +21,4 @@ use Illuminate\Http\Request;
 Route::get('/{param?}', [PostController::class, 'create']);
 
 //Store route
-Route::post('/store', [PostController::class, 'store']);
+Route::post('/store', [PostController::class, 'store'])->middleware('postUnique');

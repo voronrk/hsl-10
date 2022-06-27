@@ -6,7 +6,7 @@
     <div class="field">
         <label class="label">Заголовок</label>
         <div class="control">
-          <input class="input" type="text" name="title" placeholder="Введите название поста">
+          <input class="input" type="text" name="title" placeholder="Введите название поста" value = {{ $request->old('title') }}>
           @if($param == 'notunique') 
             <p class="help is-danger">Название должно быть уникальным!</p>
           @endif
@@ -16,7 +16,7 @@
     <div class="field">
         <label class="label">Текст поста</label>
         <div class="control">
-          <textarea class="textarea" name="text" placeholder="Введите текст поста"></textarea>
+          <textarea class="textarea" name="text" placeholder="Введите текст поста">{{ $request->old('text') }}</textarea>
         </div>
     </div>
 

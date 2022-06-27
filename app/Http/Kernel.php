@@ -66,5 +66,6 @@ class Kernel extends HttpKernel
         'hawking' => \App\Http\Middleware\HawkingRoute::class,
         'hawkingSecret' => \App\Http\Middleware\HawkingSecret::class,
         'hawkingForm' => \App\Http\Middleware\HawkingForm::class,
+        'postUnique' => \App\Http\Middleware\PostUnique::class,
     ];
 }
