@@ -19,7 +19,7 @@ use Illuminate\Http\Request;
 
 //Default route. Show page without data
 Route::get('/', function () {
-    return view('index', ['data' => []]);
+    return view('index', ['data' => ['This is default route.']]);
 });
 
 //Route-1. Show page with some information.
