@@ -1,22 +1,22 @@
 @extends('templates.layout')
 
 @section('page')
-<form class="form" method="POST" action="/profile">
+<form class="form" method="POST" action="/store">
     @csrf
     <div class="field">
-        <label class="label">Имя</label>
+        <label class="label">Заголовок</label>
         <div class="control">
-          <input class="input" type="text" name="name" placeholder="Введите имя">
-          @if($param == 'noname') 
-            <p class="help is-danger">Не задано имя!</p>
+          <input class="input" type="text" name="title" placeholder="Введите название поста">
+          @if($param == 'notunique') 
+            <p class="help is-danger">Название должно быть уникальным!</p>
           @endif
         </div>
     </div>
 
     <div class="field">
-        <label class="label">E-mail</label>
+        <label class="label">Текст поста</label>
         <div class="control">
-          <input class="input" type="email" name="email" placeholder="Введите e-mail">
+          <textarea class="textarea" name="text" placeholder="Введите текст поста"></textarea>
         </div>
     </div>
 

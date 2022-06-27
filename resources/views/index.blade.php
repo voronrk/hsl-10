@@ -1,7 +1,12 @@
 @extends('templates.layout')
 
 @section('page')
-    @foreach($data as $item)
+    @php
+        echo "<pre>";
+        echo print_r($data,true);
+        echo "</pre>";
+    @endphp
+    {{-- @foreach($data as $item)
         {{ $item}}<br>
-    @endforeach
+    @endforeach --}}
 @endsection
